@@ -1,0 +1,241 @@
+======================================================================
+OctWave 2.0 - Obesity Prediction Model Training Pipeline
+======================================================================
+
+🔍 GPU Status:
+  ✗ PyTorch CUDA not available
+  CatBoost GPU: True
+  LightGBM GPU: True
+  XGBoost GPU: False
+
+📂 Loading Data...
+  ✓ Train: 1588 samples, 29 features
+  ✓ Val: 398 samples
+  ✓ Classes: 7 categories
+  ✓ Train class distribution: {np.int64(0): np.int64(189), np.int64(1): np.int64(213), np.int64(2): np.int64(269), np.int64(3): np.int64(224), np.int64(4): np.int64(251), np.int64(5): np.int64(217), np.int64(6): np.int64(225)}
+
+======================================================================
+Starting Model Training...
+======================================================================
+
+======================================================================
+🚀 Training CatBoost Classifier
+======================================================================
+
+📊 Training final CatBoost model...
+0:	learn: 1.8207988	test: 1.8133488	best: 1.8133488 (0)	total: 22ms	remaining: 22s
+100:	learn: 0.6181678	test: 0.6918758	best: 0.6918758 (100)	total: 654ms	remaining: 5.82s
+200:	learn: 0.4737833	test: 0.6653039	best: 0.6653039 (200)	total: 1.26s	remaining: 5s
+300:	learn: 0.3824558	test: 0.6595888	best: 0.6584390 (280)	total: 1.88s	remaining: 4.37s
+400:	learn: 0.3126697	test: 0.6600251	best: 0.6564777 (362)	total: 2.54s	remaining: 3.79s
+bestTest = 0.6564777317
+bestIteration = 362
+Shrink model to first 363 iterations.
+
+✅ CatBoost Results:
+   Accuracy: 0.7864
+   F1 Score: 0.7868
+   Log Loss: 0.6565
+
+======================================================================
+🚀 Training LightGBM Classifier
+======================================================================
+
+📊 Training final LightGBM model...
+Training until validation scores don't improve for 50 rounds
+Early stopping, best iteration is:
+[49]	valid_0's multi_logloss: 0.64277
+
+✅ LightGBM Results:
+   Accuracy: 0.7889
+   F1 Score: 0.7900
+   Log Loss: 0.6428
+
+======================================================================
+🚀 Training XGBoost Classifier
+======================================================================
+
+📊 Training final XGBoost model...
+[0]	validation_0-mlogloss:1.82799
+[1]	validation_0-mlogloss:1.72975
+[2]	validation_0-mlogloss:1.64356
+[3]	validation_0-mlogloss:1.56916
+[4]	validation_0-mlogloss:1.50252
+[5]	validation_0-mlogloss:1.44177
+[6]	validation_0-mlogloss:1.38750
+[7]	validation_0-mlogloss:1.33724
+[8]	validation_0-mlogloss:1.29147
+[9]	validation_0-mlogloss:1.24991
+[10]	validation_0-mlogloss:1.21237
+[11]	validation_0-mlogloss:1.17645
+[12]	validation_0-mlogloss:1.14320
+[13]	validation_0-mlogloss:1.11236
+[14]	validation_0-mlogloss:1.08263
+[15]	validation_0-mlogloss:1.05458
+[16]	validation_0-mlogloss:1.02922
+[17]	validation_0-mlogloss:1.00502
+[18]	validation_0-mlogloss:0.98190
+[19]	validation_0-mlogloss:0.96012
+[20]	validation_0-mlogloss:0.93966
+[21]	validation_0-mlogloss:0.92115
+[22]	validation_0-mlogloss:0.90361
+[23]	validation_0-mlogloss:0.88714
+[24]	validation_0-mlogloss:0.87113
+[25]	validation_0-mlogloss:0.85625
+[26]	validation_0-mlogloss:0.84269
+[27]	validation_0-mlogloss:0.82891
+[28]	validation_0-mlogloss:0.81613
+[29]	validation_0-mlogloss:0.80427
+[30]	validation_0-mlogloss:0.79295
+[31]	validation_0-mlogloss:0.78283
+[32]	validation_0-mlogloss:0.77251
+[33]	validation_0-mlogloss:0.76293
+[34]	validation_0-mlogloss:0.75386
+[35]	validation_0-mlogloss:0.74576
+[36]	validation_0-mlogloss:0.73805
+[37]	validation_0-mlogloss:0.73112
+[38]	validation_0-mlogloss:0.72423
+[39]	validation_0-mlogloss:0.71758
+[40]	validation_0-mlogloss:0.71154
+[41]	validation_0-mlogloss:0.70543
+[42]	validation_0-mlogloss:0.69988
+[43]	validation_0-mlogloss:0.69561
+[44]	validation_0-mlogloss:0.69054
+[45]	validation_0-mlogloss:0.68637
+[46]	validation_0-mlogloss:0.68263
+[47]	validation_0-mlogloss:0.67923
+[48]	validation_0-mlogloss:0.67634
+[49]	validation_0-mlogloss:0.67312
+[50]	validation_0-mlogloss:0.67003
+[51]	validation_0-mlogloss:0.66720
+[52]	validation_0-mlogloss:0.66458
+[53]	validation_0-mlogloss:0.66165
+[54]	validation_0-mlogloss:0.65933
+[55]	validation_0-mlogloss:0.65726
+[56]	validation_0-mlogloss:0.65497
+[57]	validation_0-mlogloss:0.65242
+[58]	validation_0-mlogloss:0.64975
+[59]	validation_0-mlogloss:0.64754
+[60]	validation_0-mlogloss:0.64565
+[61]	validation_0-mlogloss:0.64387
+[62]	validation_0-mlogloss:0.64198
+[63]	validation_0-mlogloss:0.64069
+[64]	validation_0-mlogloss:0.63944
+[65]	validation_0-mlogloss:0.63823
+[66]	validation_0-mlogloss:0.63682
+[67]	validation_0-mlogloss:0.63612
+[68]	validation_0-mlogloss:0.63503
+[69]	validation_0-mlogloss:0.63398
+[70]	validation_0-mlogloss:0.63303
+[71]	validation_0-mlogloss:0.63195
+[72]	validation_0-mlogloss:0.63132
+[73]	validation_0-mlogloss:0.63103
+[74]	validation_0-mlogloss:0.63069
+[75]	validation_0-mlogloss:0.63037
+[76]	validation_0-mlogloss:0.63042
+[77]	validation_0-mlogloss:0.63030
+[78]	validation_0-mlogloss:0.62978
+[79]	validation_0-mlogloss:0.62986
+[80]	validation_0-mlogloss:0.62975
+[81]	validation_0-mlogloss:0.62993
+[82]	validation_0-mlogloss:0.63033
+[83]	validation_0-mlogloss:0.63030
+[84]	validation_0-mlogloss:0.63083
+[85]	validation_0-mlogloss:0.63111
+[86]	validation_0-mlogloss:0.63183
+[87]	validation_0-mlogloss:0.63188
+[88]	validation_0-mlogloss:0.63233
+[89]	validation_0-mlogloss:0.63248
+[90]	validation_0-mlogloss:0.63323
+[91]	validation_0-mlogloss:0.63359
+[92]	validation_0-mlogloss:0.63458
+[93]	validation_0-mlogloss:0.63488
+[94]	validation_0-mlogloss:0.63501
+[95]	validation_0-mlogloss:0.63538
+[96]	validation_0-mlogloss:0.63590
+[97]	validation_0-mlogloss:0.63640
+[98]	validation_0-mlogloss:0.63693
+[99]	validation_0-mlogloss:0.63729
+[100]	validation_0-mlogloss:0.63768
+[101]	validation_0-mlogloss:0.63835
+[102]	validation_0-mlogloss:0.63879
+[103]	validation_0-mlogloss:0.63963
+[104]	validation_0-mlogloss:0.64022
+[105]	validation_0-mlogloss:0.64120
+[106]	validation_0-mlogloss:0.64186
+[107]	validation_0-mlogloss:0.64288
+[108]	validation_0-mlogloss:0.64355
+[109]	validation_0-mlogloss:0.64430
+[110]	validation_0-mlogloss:0.64501
+[111]	validation_0-mlogloss:0.64587
+[112]	validation_0-mlogloss:0.64687
+[113]	validation_0-mlogloss:0.64794
+[114]	validation_0-mlogloss:0.64887
+[115]	validation_0-mlogloss:0.64997
+[116]	validation_0-mlogloss:0.65030
+[117]	validation_0-mlogloss:0.65104
+[118]	validation_0-mlogloss:0.65160
+[119]	validation_0-mlogloss:0.65232
+[120]	validation_0-mlogloss:0.65263
+[121]	validation_0-mlogloss:0.65357
+[122]	validation_0-mlogloss:0.65410
+[123]	validation_0-mlogloss:0.65496
+[124]	validation_0-mlogloss:0.65572
+[125]	validation_0-mlogloss:0.65638
+[126]	validation_0-mlogloss:0.65690
+[127]	validation_0-mlogloss:0.65721
+[128]	validation_0-mlogloss:0.65802
+[129]	validation_0-mlogloss:0.65854
+[130]	validation_0-mlogloss:0.65932
+[Parallel(n_jobs=-1)]: Using backend ThreadingBackend with 16 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  18 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=-1)]: Done 168 tasks      | elapsed:    0.4s
+[Parallel(n_jobs=-1)]: Done 300 out of 300 | elapsed:    0.7s finished
+[Parallel(n_jobs=16)]: Using backend ThreadingBackend with 16 concurrent workers.
+[Parallel(n_jobs=16)]: Done  18 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=16)]: Done 168 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=16)]: Done 300 out of 300 | elapsed:    0.0s finished
+[Parallel(n_jobs=16)]: Using backend ThreadingBackend with 16 concurrent workers.
+[Parallel(n_jobs=16)]: Done  18 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=16)]: Done 168 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=16)]: Done 300 out of 300 | elapsed:    0.0s finished
+[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:    0.1s finished
+
+✅ XGBoost Results:
+   Accuracy: 0.7940
+   F1 Score: 0.7945
+   Log Loss: 0.6298
+
+======================================================================
+🚀 Training Random Forest Classifier
+======================================================================
+
+✅ Random Forest Results:
+   Accuracy: 0.7864
+   F1 Score: 0.7879
+   Log Loss: 0.6779
+
+======================================================================
+🚀 Training Logistic Regression
+======================================================================
+
+✅ Logistic Regression Results:
+   Accuracy: 0.5276
+   F1 Score: 0.5096
+   Log Loss: 1.3654
+
+======================================================================
+🚀 Training MLP Neural Network
+======================================================================
+Using device: cpu
+Traceback (most recent call last):
+  File "C:\Users\Cyborg\Documents\GitHub\OctWave-2.0\training\train_models.py", line 873, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Cyborg\Documents\GitHub\OctWave-2.0\training\train_models.py", line 856, in main
+    trainer.train_mlp(epochs=100)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Cyborg\Documents\GitHub\OctWave-2.0\training\train_models.py", line 536, in train_mlp
+    X_train_tensor = torch.FloatTensor(self.X_train).to(device)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+TypeError: can't convert np.ndarray of type numpy.object_. The only supported types are: float64, float32, float16, complex64, complex128, int64, int32, int16, int8, uint64, uint32, uint16, uint8, and bool.

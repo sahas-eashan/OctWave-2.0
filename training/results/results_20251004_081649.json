@@ -1,0 +1,72 @@
+{
+  "timestamp": "2025-10-04T08:16:49.673961",
+  "config": {
+    "random_state": 42,
+    "n_folds": 5,
+    "use_gpu": true
+  },
+  "models": {
+    "catboost": {
+      "accuracy": 0.7864321608040201,
+      "f1_score": 0.7868071315427237,
+      "log_loss": 0.6564777704956798,
+      "params": {
+        "iterations": 1000,
+        "depth": 6,
+        "learning_rate": 0.05,
+        "l2_leaf_reg": 3,
+        "task_type": "GPU",
+        "random_seed": 42,
+        "verbose": 100
+      }
+    },
+    "lightgbm": {
+      "accuracy": 0.7964824120603015,
+      "f1_score": 0.7973772962925305,
+      "log_loss": 0.6407171722503823,
+      "params": {
+        "n_estimators": 1000,
+        "max_depth": 8,
+        "learning_rate": 0.05,
+        "num_leaves": 50,
+        "device": "gpu",
+        "random_state": 42,
+        "verbose": -1
+      }
+    },
+    "xgboost": {
+      "accuracy": 0.7939698492462312,
+      "f1_score": 0.7944506187800848,
+      "log_loss": 0.6297540171612565,
+      "params": {
+        "n_estimators": 1000,
+        "max_depth": 8,
+        "learning_rate": 0.05,
+        "tree_method": "hist",
+        "random_state": 42,
+        "verbosity": 1,
+        "early_stopping_rounds": 50
+      }
+    },
+    "random_forest": {
+      "accuracy": 0.7864321608040201,
+      "f1_score": 0.7879209723836711,
+      "log_loss": 0.6779368312088537
+    },
+    "logistic": {
+      "accuracy": 0.5276381909547738,
+      "f1_score": 0.5096202594165116,
+      "log_loss": 1.365385305520378
+    },
+    "ensemble": {
+      "accuracy": 0.7889447236180904,
+      "f1_score": 0.7896379543232968,
+      "log_loss": 0.6174757550167133,
+      "weights": {
+        "catboost": 0.3308668076109937,
+        "lightgbm": 0.3350951374207188,
+        "xgboost": 0.33403805496828753
+      }
+    }
+  }
+}

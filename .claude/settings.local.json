@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(venv/Scripts/python.exe -m pip install:*)",
+      "Bash(venv/Scripts/pip.exe install:*)",
+      "Bash(../venv/Scripts/python.exe train_models.py:*)",
+      "Bash(tee:*)",
+      "Bash(venv/Scripts/python.exe predict.py:*)",
+      "Bash(venv/Scripts/python.exe save_preprocessor.py:*)",
+      "Bash(venv/Scripts/python.exe:*)"
     ],
     "deny": [],
     "ask": []
