@@ -9,7 +9,9 @@
       "Bash(tee:*)",
       "Bash(venv/Scripts/python.exe predict.py:*)",
       "Bash(venv/Scripts/python.exe save_preprocessor.py:*)",
-      "Bash(venv/Scripts/python.exe:*)"
+      "Bash(venv/Scripts/python.exe:*)",
+      "Bash(../venv/Scripts/python.exe super_optimized_model.py:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
